@@ -1,47 +1,44 @@
 const Sequelize = require("sequelize");
+const database = require("./database");
 
 const Ingridient = database.define("Ingridient", {
-  ingridientsName: {
+  name: {
     type: Sequelize.STRING,
     allowNull: false
   },
-  quantity: {
+  amount: {
     type: Sequelize.INTEGER,
-    allowNull: false
+    allowNull: true
   }
 });
 
 const Category = database.define("Category", {
-  categoryName: {
+  name: {
     type: Sequelize.STRING,
     allowNull: false
   }
 });
 
 const Origin = database.define("Origin", {
-  natCuisine: {
+  name: {
     type: Sequelize.STRING,
     allowNull: false
   }
 });
 
-const RecipeStep = database.define("RecipeStep", {
+const Step = database.define("Step", {
   description: {
     type: Sequelize.STRING,
     allowNull: false
-  },
-  stepNum: {
-    type: Sequelize.INTEGER, 
-    allowNull: false
   }
 });
 
-const RecipePic = database.define("RecipePic", {
-  pic: {
-    type: Sequelize.STRING, 
-    allowNull: false
-  }
-});
+// const RecipeStepsStep = database.define("RecipeSteps", {
+//   position: {
+//     type: Sequelize.INTEGER,
+//     allowNull: false
+//   }
+// });
 
 const User = database.define("User", {
   login: {
@@ -57,14 +54,14 @@ const User = database.define("User", {
 
 const Role = database.define("Role", {
   role: {
-    type: Sequelize.BOOLEAN, // 0 - user, 1 - admin 
+    type: Sequelize.BOOLEAN, // 0 - user, 1 - admin
     allowNull: false
   }
 });
 
 const Difficulty = database.define("Difficulty", {
   difficulty: {
-    type: Sequelize.INTEGER, 
+    type: Sequelize.INTEGER,
     allowNull: false
   }
 });
@@ -75,6 +72,10 @@ const Recipe = database.define("Recipe", {
     allowNull: false
   },
   description: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  pic: {
     type: Sequelize.STRING,
     allowNull: false
   }
@@ -91,6 +92,17 @@ Recipe.belongsToMany(Ingridient, {
   otherKey: "IngridientId"
 });
 
+Step.belongsToMany(Recipe, {
+  through: "RecipeSteps",
+  foreignKey: "StepId",
+  otherKey: "RecipeId"
+});
+Recipe.belongsToMany(Step, {
+  through: "RecipeSteps",
+  foreignKey: "RecipeId",
+  otherKey: "StepId"
+});
+
 User.belongsToMany(Recipe, {
   through: "Favorites",
   foreignKey: "UserId",
@@ -105,8 +117,6 @@ Recipe.belongsToMany(User, {
 Recipe.belongsTo(Origin);
 Recipe.belongsTo(Category);
 Recipe.belongsTo(Difficulty);
-Recipe.belongsTo(RecipePic);
-Recipe.belongsTo(RecipeStep);
 
 User.belongsTo(Role);
 
@@ -117,7 +127,7 @@ module.exports = {
   Ingridient,
   Role,
   User,
-  RecipePic,
-  RecipeStep,
-  Recipe
+  Step,
+  Recipe,
+  // RecipeSteps
 };

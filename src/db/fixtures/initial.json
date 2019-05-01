@@ -1,0 +1,155 @@
+[
+    {
+        "model":"Ingridient",
+        "data":{
+            "id": 1,
+            "name": "sugar",
+            "amount": 2
+        }
+    },
+    {
+        "model":"Ingridient",
+        "data":{
+            "id": 2,
+            "name": "eggs",
+            "amount": 2
+        }
+    },
+    {
+        "model":"Ingridient",
+        "data":{
+            "id": 3,
+            "name": "vanilla",
+            "amount": 1
+        }
+    },
+    {
+        "model":"Ingridient",
+        "data":{
+            "id": 4,
+            "name": "flour",
+            "amount": 3
+        }
+    },
+    {
+        "model":"Ingridient",
+        "data":{
+            "id": 5,
+            "name": "salt",
+            "amount": 2
+        }
+    },
+    {
+        "model":"Ingridient",
+        "data":{
+            "id": 6,
+            "name": "baking soda",
+            "amount": 1
+        }
+    },
+    {
+        "model":"Category",
+        "data":{
+            "id": 1,
+            "name": "Dessert"
+        }
+    },
+    {
+        "model":"Category",
+        "data":{
+            "id": 2,
+            "name": "Soup"
+        }
+    },
+    {
+        "model":"Category",
+        "data":{
+            "id": 3,
+            "name": "Satad"
+        }
+    },
+    {
+        "model":"Origin",
+        "data":{
+            "id": 1,
+            "name": "Italian"
+        }
+    },
+    {
+        "model":"Origin",
+        "data":{
+            "id": 2,
+            "name": "Chinese"
+        }
+    },
+    {
+        "model":"Origin",
+        "data":{
+            "id": 3,
+            "name": "European"
+        }
+    },
+    {
+        "model":"Origin",
+        "data":{
+            "id": 4,
+            "name": "French"
+        }
+    },
+    {
+        "model":"Step",
+        "data":{
+            "id": 1,
+            "description": "Mix shortening, sugar, eggs, and vanilla together in large bowl."
+        }
+    },
+    {
+        "model":"Step",
+        "data":{
+            "id": 2,
+            "description": "Divide dough into 3 parts; shape into cylinders. Chill for several hours or overnight."
+        }
+    },
+    {
+        "model":"Step",
+        "data":{
+            "id": 3,
+            "description": "Heat oven to 400 degrees F (205 degrees C)."
+        }
+    },
+    {
+        "model":"Difficulty",
+        "data":{
+            "id": 1,
+            "difficulty": 1
+        }
+    },
+    {
+        "model":"Difficulty",
+        "data":{
+            "id": 2,
+            "difficulty": 2
+        }
+    },
+    {
+        "model":"Difficulty",
+        "data":{
+            "id": 3,
+            "difficulty": 3
+        }
+    },
+    {
+        "model":"Recipe",
+        "data":{
+            "id": 1,
+            "title": "Refrigerator Cookies",
+            "description": "These will freeze well for several months.",
+            "pic": "https://images.media-allrecipes.com/userphotos/560x315/1055677.jpg",
+            "Category": 1,
+            "Origin": 3,
+            "Difficulty": 1,
+            "Ingridients": [1, 2, 3, 4, 5, 6],
+            "Steps": [1, 2, 3]
+        }
+    }
+]

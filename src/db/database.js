@@ -1,8 +1,8 @@
 const Sequelize = require("sequelize");
 
-const database = new Sequelize("master", "", "", {
-  host: "localhost\SQLEXPRESS",
-  dialect: "sql",
+const database = new Sequelize("cookingapp", "cookingapp", ".CookingApp123", {
+  host: "localhost",
+  dialect: "mysql",
   pool: {
     max: 11,
     min: 0,
@@ -13,4 +13,3 @@ const database = new Sequelize("master", "", "", {
 });
 
 module.exports = database;
-// Server=localhost\SQLEXPRESS;Database=master;Trusted_Connection=True;

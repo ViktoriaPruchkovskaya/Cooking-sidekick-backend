@@ -5,13 +5,16 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon src/index.js"
+    "start": "nodemon src/index.js",
+    "populatedb": "node src/db/populatedb.js"
   },
   "author": "Viktoria Pruchkovskaya",
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.4",
-    "sequelize": "^5.7.0"
+    "mysql2": "^1.6.5",
+    "sequelize": "^5.7.0",
+    "sequelize-fixtures": "^0.10.0"
   },
   "devDependencies": {
     "nodemon": "^1.18.10"

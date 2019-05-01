@@ -1,17 +1,24 @@
 const express = require("express");
 const path = require("path");
+const db = require("./db/database");
+const models = require("./db/models");
 const app = express();
+const router = require("./routes");
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 
 const appPath = path.join(__dirname, "../public");
 
 app.use(express.static(appPath));
+app.use(router);
 
-app.get("/", (req, res) => {
-  res.send("root");
-});
+function startListen(app, port) {
+  app.listen(port, function() {
+    console.log(`App listening on port  ${PORT}!`);
+  });
+}
 
-app.listen(PORT, function() {
-  console.log(`App listening on port  ${PORT}!`);
+db.sync().then(() => {
+  console.log("Database synchronized");
+  startListen(app, PORT);
 });
