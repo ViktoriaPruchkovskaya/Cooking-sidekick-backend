@@ -33,7 +33,7 @@ const Step = database.define("Step", {
   }
 });
 
-// const RecipeStepsStep = database.define("RecipeSteps", {
+// const RecipeSteps = database.define("RecipeSteps", {
 //   position: {
 //     type: Sequelize.INTEGER,
 //     allowNull: false

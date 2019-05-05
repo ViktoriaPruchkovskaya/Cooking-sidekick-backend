@@ -21,4 +21,6 @@ function startListen(app, port) {
 db.sync().then(() => {
   console.log("Database synchronized");
   startListen(app, PORT);
+}).catch((error) => {
+  console.error(error);
 });
