@@ -1,13 +1,13 @@
 const { Recipe, Ingridient, Step } = require("../db/models");
 
-async function recipeList(request, response) {
+async function recipePage(request, response) {
     try {
-        console.log("request is received");
-        const recipes = await Recipe.findAll({
+        const recipe = await Recipe.findAll({
+            where: { id: request.params.id },
             include: [Ingridient, Step]
         });
         response.header("Content-Type", "application/json");
-        response.send(JSON.stringify(recipes));
+        response.send(JSON.stringify(recipe));
     } catch (error) {
         console.error(error);
     }
@@ -15,5 +15,5 @@ async function recipeList(request, response) {
 
 
 module.exports = {
-    recipeList
+    recipePage
 };

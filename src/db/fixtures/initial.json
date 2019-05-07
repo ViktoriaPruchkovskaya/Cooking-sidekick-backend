@@ -48,24 +48,78 @@
         }
     },
     {
+        "model":"Ingridient",
+        "data":{
+            "id": 7,
+            "name": "garlic clove",
+            "amount": 1
+        }
+    },
+    {
+        "model":"Ingridient",
+        "data":{
+            "id": 8,
+            "name": "olive oil",
+            "amount": 2
+        }
+    },
+    {
+        "model":"Ingridient",
+        "data":{
+            "id": 9,
+            "name": "lemon juice",
+            "amount": 2
+        }
+    },
+    {
+        "model":"Ingridient",
+        "data":{
+            "id": 10,
+            "name": " paprika",
+            "amount": 1
+        }
+    },
+    {
+        "model":"Ingridient",
+        "data":{
+            "id": 11,
+            "name": "shrimp",
+            "amount": 2
+        }
+    },
+    {
         "model":"Category",
         "data":{
-            "id": 1,
+            "id": 5,
             "name": "Dessert"
         }
     },
     {
         "model":"Category",
         "data":{
-            "id": 2,
+            "id": 4,
             "name": "Soup"
         }
     },
     {
         "model":"Category",
         "data":{
-            "id": 3,
+            "id": 2,
             "name": "Satad"
+        }
+    },
+    {
+        "model":"Category",
+        "data":{
+            "id": 1,
+            "name": "Starter"
+        }
+    },
+    {
+        "model":"Category",
+        "data":{
+            "id": 3,
+            "name": "Main course"
         }
     },
     {
@@ -118,6 +172,27 @@
         }
     },
     {
+        "model":"Step",
+        "data":{
+            "id": 4,
+            "description": "Preheat grill for medium heat."
+        }
+    },
+    {
+        "model":"Step",
+        "data":{
+            "id": 5,
+            "description": "In a small bowl, crush the garlic with the salt. Mix in cayenne pepper and paprika, and then stir in olive oil and lemon juice to form a paste. In a large bowl, toss shrimp with garlic paste until evenly coated."
+        }
+    },
+    {
+        "model":"Step",
+        "data":{
+            "id": 6,
+            "description": "Lightly oil grill grate. Cook shrimp for 2 to 3 minutes per side, or until opaque. Transfer to a serving dish, garnish with lemon wedges, and serve."
+        }
+    },
+    {
         "model":"Difficulty",
         "data":{
             "id": 1,
@@ -151,5 +226,21 @@
             "Ingridients": [1, 2, 3, 4, 5, 6],
             "Steps": [1, 2, 3]
         }
+    },
+    {
+        "model":"Recipe",
+        "data":{
+            "id": 2,
+            "title": "Spicy Grilled Shrimp",
+            "description": "So fast and easy to prepare, these shrimp are destined to be the hit of any barbeque.",
+            "pic": "https://images.media-allrecipes.com/userphotos/720x405/1384969.jpg",
+            "Category": 4,
+            "Origin": 2,
+            "Difficulty": 1,
+            "Ingridients": [7, 8, 9, 10, 11, 5],
+            "Steps": [4, 5, 6]
+        }
     }
 ]
+
+
