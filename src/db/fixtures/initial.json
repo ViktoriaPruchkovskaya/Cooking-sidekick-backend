@@ -1,6 +1,6 @@
 [
     {
-        "model":"Ingridient",
+        "model":"Ingredient",
         "data":{
             "id": 1,
             "name": "sugar",
@@ -8,7 +8,7 @@
         }
     },
     {
-        "model":"Ingridient",
+        "model":"Ingredient",
         "data":{
             "id": 2,
             "name": "eggs",
@@ -16,7 +16,7 @@
         }
     },
     {
-        "model":"Ingridient",
+        "model":"Ingredient",
         "data":{
             "id": 3,
             "name": "vanilla",
@@ -24,7 +24,7 @@
         }
     },
     {
-        "model":"Ingridient",
+        "model":"Ingredient",
         "data":{
             "id": 4,
             "name": "flour",
@@ -32,7 +32,7 @@
         }
     },
     {
-        "model":"Ingridient",
+        "model":"Ingredient",
         "data":{
             "id": 5,
             "name": "salt",
@@ -40,7 +40,7 @@
         }
     },
     {
-        "model":"Ingridient",
+        "model":"Ingredient",
         "data":{
             "id": 6,
             "name": "baking soda",
@@ -48,7 +48,7 @@
         }
     },
     {
-        "model":"Ingridient",
+        "model":"Ingredient",
         "data":{
             "id": 7,
             "name": "garlic clove",
@@ -56,7 +56,7 @@
         }
     },
     {
-        "model":"Ingridient",
+        "model":"Ingredient",
         "data":{
             "id": 8,
             "name": "olive oil",
@@ -64,7 +64,7 @@
         }
     },
     {
-        "model":"Ingridient",
+        "model":"Ingredient",
         "data":{
             "id": 9,
             "name": "lemon juice",
@@ -72,7 +72,7 @@
         }
     },
     {
-        "model":"Ingridient",
+        "model":"Ingredient",
         "data":{
             "id": 10,
             "name": " paprika",
@@ -80,7 +80,7 @@
         }
     },
     {
-        "model":"Ingridient",
+        "model":"Ingredient",
         "data":{
             "id": 11,
             "name": "shrimp",
@@ -90,29 +90,15 @@
     {
         "model":"Category",
         "data":{
-            "id": 5,
-            "name": "Dessert"
+            "id": 1,
+            "name": "Starter"
         }
-    },
-    {
-        "model":"Category",
-        "data":{
-            "id": 4,
-            "name": "Soup"
-        }
-    },
+    },  
     {
         "model":"Category",
         "data":{
             "id": 2,
-            "name": "Satad"
-        }
-    },
-    {
-        "model":"Category",
-        "data":{
-            "id": 1,
-            "name": "Starter"
+            "name": "Salad"
         }
     },
     {
@@ -121,19 +107,33 @@
             "id": 3,
             "name": "Main course"
         }
-    },
+    },   
+    {
+        "model":"Category",
+        "data":{
+            "id": 4,
+            "name": "Soup"
+        }
+    },   
+    {
+        "model":"Category",
+        "data":{
+            "id": 5,
+            "name": "Dessert"
+        }
+    },   
     {
         "model":"Origin",
         "data":{
             "id": 1,
-            "name": "Italian"
+            "name": "Chinese"
         }
     },
     {
         "model":"Origin",
         "data":{
             "id": 2,
-            "name": "Chinese"
+            "name": "Italian"
         }
     },
     {
@@ -196,21 +196,21 @@
         "model":"Difficulty",
         "data":{
             "id": 1,
-            "difficulty": 1
+            "difficulty": "Easy"
         }
     },
     {
         "model":"Difficulty",
         "data":{
             "id": 2,
-            "difficulty": 2
+            "difficulty": "Medium"
         }
     },
     {
         "model":"Difficulty",
         "data":{
             "id": 3,
-            "difficulty": 3
+            "difficulty": "Hard"
         }
     },
     {
@@ -220,10 +220,10 @@
             "title": "Refrigerator Cookies",
             "description": "These will freeze well for several months.",
             "pic": "https://images.media-allrecipes.com/userphotos/560x315/1055677.jpg",
-            "Category": 1,
+            "Category": 5,
             "Origin": 3,
             "Difficulty": 1,
-            "Ingridients": [1, 2, 3, 4, 5, 6],
+            "Ingredients": [1, 2, 3, 4, 5, 6],
             "Steps": [1, 2, 3]
         }
     },
@@ -234,11 +234,18 @@
             "title": "Spicy Grilled Shrimp",
             "description": "So fast and easy to prepare, these shrimp are destined to be the hit of any barbeque.",
             "pic": "https://images.media-allrecipes.com/userphotos/720x405/1384969.jpg",
-            "Category": 4,
-            "Origin": 2,
-            "Difficulty": 1,
-            "Ingridients": [7, 8, 9, 10, 11, 5],
+            "Category": 1,
+            "Origin": 1,
+            "Difficulty": 2,
+            "Ingredients": [7, 8, 9, 10, 11, 5],
             "Steps": [4, 5, 6]
+        }
+    },
+    {
+        "model": "User",
+        "data": {
+            "login": "vika",
+            "pass": "12345"
         }
     }
 ]

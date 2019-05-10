@@ -1,7 +1,7 @@
 const Sequelize = require("sequelize");
 const database = require("./database");
 
-const Ingridient = database.define("Ingridient", {
+const Ingredient = database.define("Ingredient", {
   name: {
     type: Sequelize.STRING,
     allowNull: false
@@ -33,13 +33,6 @@ const Step = database.define("Step", {
   }
 });
 
-// const RecipeSteps = database.define("RecipeSteps", {
-//   position: {
-//     type: Sequelize.INTEGER,
-//     allowNull: false
-//   }
-// });
-
 const User = database.define("User", {
   login: {
     type: Sequelize.STRING,
@@ -61,7 +54,7 @@ const Role = database.define("Role", {
 
 const Difficulty = database.define("Difficulty", {
   difficulty: {
-    type: Sequelize.INTEGER,
+    type: Sequelize.STRING,
     allowNull: false
   }
 });
@@ -81,15 +74,22 @@ const Recipe = database.define("Recipe", {
   }
 });
 
-Ingridient.belongsToMany(Recipe, {
-  through: "RecipeIngridients",
-  foreignKey: "IngridientId",
+const Favorite = database.define("Favorite", {
+  isFavorite:{
+    type: Sequelize.BOOLEAN,
+    defaultValue: false
+  }
+})
+
+Ingredient.belongsToMany(Recipe, {
+  through: "RecipeIngredients",
+  foreignKey: "IngredientId",
   otherKey: "RecipeId"
 });
-Recipe.belongsToMany(Ingridient, {
-  through: "RecipeIngridients",
+Recipe.belongsToMany(Ingredient, {
+  through: "RecipeIngredients",
   foreignKey: "RecipeId",
-  otherKey: "IngridientId"
+  otherKey: "IngredientId"
 });
 
 Step.belongsToMany(Recipe, {
@@ -104,12 +104,12 @@ Recipe.belongsToMany(Step, {
 });
 
 User.belongsToMany(Recipe, {
-  through: "Favorites",
+  through: Favorite,
   foreignKey: "UserId",
   otherKey: "RecipeId"
 });
 Recipe.belongsToMany(User, {
-  through: "Favorites",
+  through: Favorite,
   foreignKey: "RecipeId",
   otherKey: "UserId"
 });
@@ -124,10 +124,11 @@ module.exports = {
   Origin,
   Category,
   Difficulty,
-  Ingridient,
+  Ingredient,
   Role,
   User,
   Step,
   Recipe,
+  Favorite
   // RecipeSteps
 };
